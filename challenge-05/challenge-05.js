@@ -7,14 +7,14 @@ var myarray = [1, 2, 3, 4, 5];
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-function getArgument(arg) {
-  return arg;
+function myFunction(arr) {
+  return arr;
 }
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-console.log(getArgument(myarray)[0]);
+console.log(myFunction(myarray)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -29,7 +29,7 @@ function getByIndex(arr, index) {
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-var myarray2 = ['a', 'b', 'c', 'd', 'e'];
+var myarray2 = [1, 'b', [1, 2], { a: 'foo' }, true];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
@@ -55,30 +55,32 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-function book(name) {
+function book(bookName) {
   var books = {
-    cangaceirojavascript: {
+    'Cangaceiro JavaScript': {
       quantidadePaginas: 502,
       autor: 'Flávio Almeida',
       editora: 'Casa do Código'
     },
-    nodejs: {
+    'Node JS': {
       quantidadePaginas: 187,
       autor: 'Caio Ribeiro Pereira',
       editora: 'Casa do Código'
     },
-    es6: {
+    'ES6': {
       quantidadePaginas: 206,
       autor: 'Diego Martins de Pinho',
       editora: 'Casa do Código'
     }
   };
 
-  if (!name) {
-    return books;
-  }
+  // if (!bookName) {
+  //   return books;
+  // }
 
-  return books[name];
+  // return books[bookName];
+
+  return !bookName ? books : books[bookName];
 }
 
 /*
@@ -91,18 +93,19 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log('O livro Cangaceiro JavaScript tem ' + book('cangaceirojavascript').quantidadePaginas + ' páginas!');
+var bookName = 'Cangaceiro JavaScript';
+console.log('O livro ' + bookName + ' tem ' + book(bookName).quantidadePaginas + ' páginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log('O autor do livro Cangaceiro JavaScript é ' + book('cangaceirojavascript').autor + '.');
+console.log('O autor do livro ' + bookName + ' é ' + book(bookName).autor + '.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log('O livro Cangaceiro JavaScript foi publicado pela editora ' + book('cangaceirojavascript').editora + '.');
+console.log('O livro ' + bookName + ' foi publicado pela editora ' + book(bookName).editora + '.');
