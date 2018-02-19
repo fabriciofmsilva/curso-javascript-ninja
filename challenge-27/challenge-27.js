@@ -41,63 +41,63 @@
     return this.elements;
   }
 
-  DOM.prototype.forEach = function(callback) {
-    Array.prototype.forEach.call(this.elements, callback);
+  DOM.prototype.forEach = function forEach() {
+    return Array.prototype.forEach.apply(this.elements, arguments);
   };
 
-  DOM.prototype.map = function() {
-    Array.prototype.map.call(this.elements, callback);
+  DOM.prototype.map = function map() {
+    return Array.prototype.map.apply(this.elements, arguments);
   };
 
-  DOM.prototype.filter = function() {
-    Array.prototype.filter.call(this.elements, callback);
+  DOM.prototype.filter = function filter() {
+    return Array.prototype.filter.apply(this.elements, arguments);
   };
 
-  DOM.prototype.reduce = function() {
-    Array.prototype.reduce.call(this.elements, callback);
+  DOM.prototype.reduce = function reduce() {
+    return Array.prototype.reduce.apply(this.elements, arguments);
   };
 
-  DOM.prototype.reduceRight = function() {
-    Array.prototype.reduceRight.call(this.elements, callback);
+  DOM.prototype.reduceRight = function reduceRight() {
+    return Array.prototype.reduceRight.apply(this.elements, arguments);
   };
 
-  DOM.prototype.every = function() {
-    Array.prototype.every.call(this.elements, callback);
+  DOM.prototype.every = function every() {
+    return Array.prototype.every.apply(this.elements, arguments);
   };
 
-  DOM.prototype.some = function() {
-    Array.prototype.some.call(this.elements, callback);
+  DOM.prototype.some = function some() {
+    return Array.prototype.some.apply(this.elements, arguments);
   };
 
   function is(obj) {
     return Object.prototype.toString.call(obj);
   }
 
-  DOM.isArray = function() {
+  DOM.isArray = function isArray(obj) {
     return is(obj) === '[object Array]';
   };
 
-  DOM.isObject = function() {
+  DOM.isObject = function isObject(obj) {
     return is(obj) === '[object Object]';
   };
 
-  DOM.isFunction = function() {
+  DOM.isFunction = function isFunction(obj) {
     return is(obj) === '[object Function]';
   };
 
-  DOM.isNumber = function() {
+  DOM.isNumber = function isNumber(obj) {
     return is(obj) === '[object Number]';
   };
 
-  DOM.isString = function() {
+  DOM.isString = function isString(obj) {
     return is(obj) === '[object String]';
   };
 
-  DOM.isBoolean = function() {
+  DOM.isBoolean = function isBoolean(obj) {
     return is(obj) === '[object Boolean]';
   };
 
-  DOM.isNull = function() {
+  DOM.isNull = function isNull(obj) {
     return is(obj) === '[object Null]' || is(obj) === '[object Undefined]';
   };
 
