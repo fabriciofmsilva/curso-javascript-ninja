@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Challenge 28</title>
+  <style>
+    .address {
+      display: none;
+    }
+
+    .address.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <form data-js="form">
+    <input type="text" data-js="cep-input">
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <p class="alert" data-js="alert"></p>
+
+  <address class="address" data-js="address">
+    <p>Logradouro: <span data-js="logradouro"></span></p>
+    <p>Bairro: <span data-js="bairro"></span></p>
+    <p>Cidade: <span data-js="cidade"></span></p>
+    <p>Estado: <span data-js="estado"></span></p>
+  </address>
+
+  <script src="challenge-28.js"></script>
+</body>
+</html>
