@@ -36,4 +36,16 @@
   que será nomeado de "app".
   */
 
+  function app() {
+    var $company = new DOM('[data-js="company"]');
+
+    Company.get(function(data) {
+      console.log(data);
+      $company.get()[0].textContent = data.name;
+      $company.get()[1].textContent = data.phone;
+    });
+  }
+
+  app();
+
 })();
