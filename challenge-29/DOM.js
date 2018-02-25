@@ -2,6 +2,10 @@
   'use strict';
 
   function DOM(selector) {
+    if (!(this instanceof DOM)) {
+      return new DOM(selector);
+    }
+
     this.elements = document.querySelectorAll(selector);
   }
 
@@ -17,8 +21,12 @@
     });
   }
 
-  DOM.prototype.get = function() {
-    return this.elements;
+  DOM.prototype.get = function(index) {
+    if (!index) {
+      return this.elements[0];
+    }
+
+    return this.elements[index];
   }
 
   DOM.prototype.forEach = function forEach() {
@@ -82,4 +90,5 @@
   };
 
   window.DOM = DOM;
+
 })(window, document);
